@@ -1,7 +1,9 @@
 ## A Quick Overview of Docker
 
 
-Docker is a tool to create, run and deploy the application by using light-weighted containers. These containers help the applications to work efficiently in different environments. By using Docker, developers can quickly build, pack, ship, and run applications as lightweight, portable, self-sufficient containers and run virtually anywhere. It helps developers to focus on the application code without worrying about underlying OS or deployment systems
+Docker is a way to package software so it can run on any hardware. By using Docker, developers can quickly build, pack, ship, and run applications as lightweight, portable, self-sufficient containers and run virtually anywhere. 
+
+It helps developers to focus on the application code without worrying about underlying OS or deployment systems.
 
 
 ### How it is different from a Virtual Machine?
@@ -32,7 +34,7 @@ Unlike virtual machines, Docker utilises the host OS instead of creating a new G
 
 **Volume:**	
 
-- When the container is deleted, It will also remove the data associated with that container. If you want to retain that data we can store it outside the docker as volume and it can be mounted again to the new container whenever it is required. 
+- When the container is deleted, It will also remove the data associated with it. If you want to retain that data, we can store it outside the docker as volume and it can be mounted again to the new container whenever it is required. 
 
 ### Basic commands
 
@@ -81,7 +83,7 @@ Unlike virtual machines, Docker utilises the host OS instead of creating a new G
 
 **Notes**
 
-- Containers go to sleep if there is no running process in images. For Example, Ubuntu is a container for other images to execute. It will not have any running process in it. So it will go to sleep as soon as it is started. To avoid that you can pass sleep <sec> argument.      
+- Containers will go to sleep if there is no running process in images. For Example, Ubuntu is a container for other images to execute. It will not have any running process in it. So it will go to sleep as soon as it is started. To avoid that you can pass sleep <sec> argument.      
 ```
 docker run ubuntu sleep 10
 ```
@@ -92,7 +94,10 @@ docker run <imagename>:tagname
     
 
 
-**References**
-Debugging - https://www.docker.com/blog/live-debugging-docker/
+**Useful Links**
+
+Debugging Docker - https://www.docker.com/blog/live-debugging-docker/
+
+Docker in ten minutes - https://www.youtube.com/watch?v=gAkwW2tuIqE
  
 
