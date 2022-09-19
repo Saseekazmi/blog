@@ -56,7 +56,7 @@ export default function App() {
 
 I was trying to set a quote from quotesArr state to currentQuote immediately after quotesArr state was initialized. 
 
-I created generateRandomQuote() for this purpose. I was expecting it to generate a random number to fetch a quote from quotesArr state. But unfortunately, quotesArr is coming as an empty array and got below the below error in the console.
+I created generateRandomQuote() for this purpose.I was expecting it to generate a random number to fetch a quote from quotesArr state. But unfortunately, quotesArr is coming as an empty array inside that function and got below the below error.
 
 
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1645126401118/U38sLkeDH9.png)
