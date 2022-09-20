@@ -1,6 +1,6 @@
 ## How to connect  the localhost to the docker container
 
-Imagine you have an application running on localhost port 3000, and you want to connect it to a running docker container. If you try to connect the local host directly from your docker instances, it will throw an error.
+If you are debugging an application inside a docker container and want to connect to the SQL server running on your localhost:3000, you cannot give the localhost:3000 as a connection string. Docker doesn't know how to connect to your local host. To solve that, you can follow the below methods.
 
 If you are a mac or windows user, you could simply replace the **localhost:3000** with **host.docker.internal:3000 ** inside your container.
 
