@@ -1,10 +1,8 @@
-## A Quick Overview of Docker
+# A Quick Overview of Docker
 
-
-Docker is a way to package software so it can run on any hardware. By using Docker, developers can quickly build, pack, ship, and run applications as lightweight, portable, self-sufficient containers and run virtually anywhere. 
+Docker is a way to package software so it can run on any hardware. By using Docker, developers can quickly build, pack, ship, and run applications as lightweight, portable, self-sufficient containers and run virtually anywhere.
 
 It helps developers to focus on the application code without worrying about underlying OS or deployment systems.
-
 
 ### How it is different from a Virtual Machine?
 
@@ -16,29 +14,37 @@ Unlike virtual machines, Docker utilises the host OS instead of creating a new G
 
 ### Important Terminologies in Docker
 
-**Image: **
+\*\*Image: \*\*
 
-- It is defined inside .Dockerfile in the root directory.
-- It is a read-only file with a set of instructions and commands to run a docker container.
-- Each instruction will be created as a layer and each layer will be cached during docker image building. If any issues occur, we can rebuild the image after rectifying them. Docker will rebuild the modified layer and use the cache for other layers. 
-	
-** Containers:**
+* It is defined inside .Dockerfile in the root directory.
+    
+* It is a read-only file with a set of instructions and commands to run a docker container.
+    
+* Each instruction will be created as a layer and each layer will be cached during docker image building. If any issues occur, we can rebuild the image after rectifying them. Docker will rebuild the modified layer and use the cache for other layers.
+    
 
-- It is a running instance of a docker image. From one image you can create multiple containers (all running the sample application) on multiple Docker platform
-- Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. 
-- All containers are run by a single operating system kernel and are thus more lightweight than virtual machines.
+**Containers:**
 
-** Container Registry:**
+* It is a running instance of a docker image. From one image you can create multiple containers (all running the sample application) on multiple Docker platform
+    
+* Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels.
+    
+* All containers are run by a single operating system kernel and are thus more lightweight than virtual machines.
+    
 
-- Docker Container Registry is where we put Docker Image remotely before deploying it to the server. In another way, it is a standard way to store and distribute Docker images.
+**Container Registry:**
 
-**Volume:**	
+* Docker Container Registry is where we put Docker Images remotely before deploying them to the server. In another way, it is a standard way to store and distribute Docker images.
+    
 
-- When the container is deleted, It will also remove the data associated with it. If you want to retain that data, we can store it outside the docker as volume and it can be mounted again to the new container whenever it is required. 
+**Volume:**
+
+* When the container is deleted, It will also remove the data associated with it. If you want to retain that data, we can store it outside the docker as volume and it can be mounted again to the new container whenever it is required.
+    
 
 ### Basic commands
 
-```
+```plaintext
 #To pull the image from registry
    docker pull <image-name>
 
@@ -76,28 +82,27 @@ Unlike virtual machines, Docker utilises the host OS instead of creating a new G
    docker run -p <docker_port>:<container port>  <image-name>	
 
 #To mount the docker volumes
-	docker run -v <external volume dir>:<docker dir> <image-name>	
-
-
-``` 
+	docker run -v <external volume dir>:<docker dir> <image-name>
+```
 
 **Notes**
 
-- Containers will go to sleep if there is no running process in images. For Example, Ubuntu is a container for other images to execute. It will not have any running process in it. So it will go to sleep as soon as it is started. To avoid that you can pass sleep <sec> argument.      
-```
-docker run ubuntu sleep 10
-```
-- By default docker will attach the latest tag when you run the docker run command. It will pull the latest image from the registry. you can add a tag to build using the -t flag when building.  For Example, docker build . -t tagname <imagename>. if you want to pull tagname , you can use  .
-```
-docker run <imagename>:tagname
-```
+* Containers will go to sleep if there is no running process in images. For Example, Ubuntu is a container for other images to execute. It will not have any running process in it. So it will go to sleep as soon as it is started. To avoid that you can pass sleep argument.
     
 
+```plaintext
+docker run ubuntu sleep 10
+```
+
+* By default, docker will attach the latest tag when you run the docker run command. It will pull the latest image from the registry. you can add a tag to build using the -t flag when building.  For Example, docker build . -t tagname . if you want to pull tagname , you can use it  .
+    
+
+```plaintext
+docker run <imagename>:tagname
+```
 
 **Useful Links**
 
 Debugging Docker - https://www.docker.com/blog/live-debugging-docker/
 
 Docker in ten minutes - https://www.youtube.com/watch?v=gAkwW2tuIqE
- 
-
