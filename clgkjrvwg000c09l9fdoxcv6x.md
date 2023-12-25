@@ -8,13 +8,13 @@ tags: auth0, auth0-actions, auth0-react-sdk
 
 ---
 
-Hi Folks!!! Hope you all are doing great. I was bumping my head into the desk when I try to figure out a way to pass custom parameters to the auth0 actions.
+Hi Folks!!! Hope you all are doing great. I was bumping my head into the desk when I tried to figure out a way to pass custom parameters to the auth0 actions.
 
 Here's my use case. I want to execute a post-login action that sets a custom picture for users on their user metadata on their first login. But I want to execute this action only for certain apps on my auth0 tenant with a feature flag.
 
-Since there is no official documentation available on the auth0 page or in the community, I have no other choice but to find a solution by trial and error method. Luckily, I succeeded in that on my third attempt.
+Since there is no official documentation available on the auth0 page or in the community, I have no other choice but to find a solution by trial-and-error method. Luckily, I succeeded in that on my third attempt.
 
-In case, If you wonder what auth0 action is, and how it works, Here's the well-explained official [documentation](https://auth0.com/blog/introducing-auth0-actions/).
+In case, if you wonder what auth0 action is, and how it works, Here's the well-explained official [documentation](https://auth0.com/blog/introducing-auth0-actions/).
 
 Now, let's see how to pass and retrieve feature flags in actions.
 
