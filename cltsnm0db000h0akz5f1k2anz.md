@@ -9,7 +9,7 @@ tags: cookies, authentication, auth0, nextjs, logout, nextauthjs
 
 ---
 
-Hello! I hope you are doing well. I have been working on a Next.js project that uses Auth0 to securely manage user flows. It has multiple sections and routes where users can log in or log out. In the existing implementation, when users log out, they are redirected to the homepage. I want to redirect users to the same page or route from which they initiated the logout.
+Hello Everyone! I have been working on a Next.js project that uses Auth0 to manage user flows securely. It has multiple sections and routes where users can log in or out. Currently, when users log out, they are redirected to the homepage. However, I want to modify this behaviour to redirect users to the exact same page or route from which they initiated the logout.
 
 ### **Do you think there is a simple and straightforward solution in the Auth0-Next.js SDK?**
 
@@ -31,7 +31,7 @@ Here are the steps I took:
     
 2. I created a new redirect route ([www.saseek.com/redirect](http://www.saseek.com/redirect)) and added it to the allowed logout URL for the application in the Auth0 dashboard.
     
-3. Auth0 will redirect users to the new redirect page upon successful logout and check whether the cookie is present on their browser.
+3. Auth0 will redirect users to the new redirect page upon successful logout and check whether the cookie is on their browser.
     
 4. If the cookie is present, users will be redirected to the URL stored in that cookie and that cookie will be destroyed.
     
@@ -45,21 +45,13 @@ Here are the steps I took:
 ```javascript
 import React from 'react';
 import Cookies from 'js-cookie'
-
 import Loader from './Loader';
 
 const LogoutRedirect = (props) => {
-  const updateReturnTo = (returnTo) => {
-      let updatedUrl = new URL(returnTo);
-	  let stringUrl = updatedUrl.toString();
-      return stringUrl;
-  }
-
   React.useEffect(() => {
-    const hasReturnToCookie = Cookies.get('returnTo');
+    const returnToCookie = Cookies.get('returnTo');
     Cookies.remove('returnTo', { domain: window.location.hostname });
-    window.location.href = hasReturnToCookie ? updateReturnTo(hasReturnToCookie) : '/';
-    
+    window.location.href = returnToCookie ? returnToCookie : '/';
   }, []);
 
   return <Loader loaderText='Redirecting...' />
