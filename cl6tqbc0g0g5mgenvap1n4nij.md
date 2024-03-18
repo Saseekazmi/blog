@@ -10,9 +10,9 @@ tags: docker, developer, debugging
 
 If you are debugging an application inside a docker container and want to connect to the SQL server running on your localhost:3000, you cannot give the localhost:3000 as a connection string. Docker doesn't know how to connect to your local host. To solve that, you can follow the below methods.
 
-If you are a Mac or Windows user, you could simply replace the **localhost:3000** with \*\* host.docker.internal:3000 \*\* inside your container.
+If you are a Mac or Windows user, you could simply replace the **localhost:3000** with \*\*host.docker.internal:3000\*\* inside your container.
 
-If you are a Linux user, you could add a \*\* --add-host \*\*flag for the docker run. Start your containers with this flag to expose the host string:
+If you are a Linux user, you could add a \*\*--add-host\*\*flag for the docker run. Start your containers with this flag to expose the host string:
 
 ```plaintext
 docker run --add-host host.docker.internal:host-gateway containername:latest
