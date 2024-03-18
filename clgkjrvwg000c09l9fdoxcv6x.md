@@ -4,6 +4,7 @@ seoTitle: "How to pass feature flags to the auth0 actions from the react SDK"
 datePublished: Mon Apr 17 2023 08:01:40 GMT+0000 (Coordinated Universal Time)
 cuid: clgkjrvwg000c09l9fdoxcv6x
 slug: how-to-pass-custom-parameters-to-the-auth0-post-login-actions-using-react-sdk
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1710742953559/1997f920-a2c9-4ad5-b44b-4db70d42fa6f.png
 tags: auth0, auth0-actions, auth0-react-sdk
 
 ---
@@ -18,7 +19,7 @@ In case, if you wonder what auth0 action is, and how it works, Here's the well-e
 
 Now, let's see how to pass and retrieve feature flags in actions.
 
-**Step 1:** Add feature flags/Custom params to the Auth0 provider as mentioned in the below code.
+**Step 1:** Add feature flags/Custom parameters to the Auth0 provider as mentioned in the below code.
 
 ```javascript
      <Auth0Provider
@@ -32,7 +33,7 @@ Now, let's see how to pass and retrieve feature flags in actions.
       </Auth0Provider>
 ```
 
-**Step 2:** Login into your auth0 tenant dashboard and Select **Actions -&gt; Flows -&gt; Login -&gt; Add Action -&gt;Build Custom.** Create Action prompt will open, Enter the action name and select Login/Post Login trigger and click on Create button.
+**Step 2:** Login into your auth0 tenant dashboard and Select **Actions -&gt; Flows -&gt; Login -&gt; Add Action -&gt;Build Custom.** Create Action prompt will open, Enter the action name and select Login/Post Login trigger and click on the Create button.
 
 **Step 3:** You can retrieve all custom params passed from auth0SDK from `event.request.query` object and user\_metadata from the `event.user` object.
 
